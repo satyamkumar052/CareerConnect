@@ -1,0 +1,26 @@
+<% layout("/layouts/boilerplate") %>
+
+    <div class="container mt-4">
+  <div class="row g-4">
+    <% for (let job of alljobs) { %> 
+      <div class="col-md-4">
+        <a href="/jobs/<%=job._id%>" class="listing-job">
+          <div class="card border-secondary mb-3" style="height: 14rem;">
+            <div class="card-header">
+              <b><%= job.title %></b><br><span><%= job.company %></span>
+            </div>
+            <div class="card-body text-secondary">
+              <h5 class="card-title">
+                <i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;<%= job.location %>
+              </h5>
+              <p class="card-text">
+                <i class="fa-solid fa-money-check-dollar"></i>&nbsp;&nbsp;<%= job.salary.toLocaleString("en-IN") %>
+              </p>
+            </div>
+            <div class="card-text">Click to view details <i class="fa-solid fa-greater-than"></i></div>
+          </div>
+        </a>
+      </div>
+    <% } %>
+  </div>
+</div>

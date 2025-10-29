@@ -1,0 +1,128 @@
+body {
+  background-color: #f5f7fa;
+  font-family: 'Poppins', sans-serif;
+}
+
+.listing-job {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.listing-job:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card {
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card-header {
+  background-color: rgba(5, 68, 122);
+  color: #fff;
+  padding: 10px;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.card-header span {
+  display: block;
+  font-size: 0.9rem;
+  color: #d1d8e0;
+}
+
+.card-body {
+  padding: 12px 15px;
+  color: #444;
+}
+
+.card-title {
+  font-size: 1rem;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #555;
+  padding: 0 15px 10px 15px;
+}
+
+.card-text:last-child {
+  text-align: right;
+  color: rgba(5, 68, 122);
+  font-weight: 600;
+  padding-bottom: 12px;
+}
+
+.fa-location-dot,
+.fa-money-check-dollar {
+  color: rgba(5, 68, 122);
+}
+
+/* login.ejs */
+body {
+  background-color: #f5f7fa;
+  font-family: "Poppins", sans-serif;
+}
+
+.login-container {
+  max-width: 420px;
+  margin: 80px auto;
+  background: #ffffff;
+  padding: 40px 35px;
+  border-radius: 12px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
+}
+
+.login-container h1 {
+  text-align: center;
+  color: #2e86de;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #333;
+}
+
+.form-control {
+  border-radius: 8px;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+}
+
+.form-control:focus {
+  border-color: #2e86de;
+  box-shadow: 0 0 4px rgba(46, 134, 222, 0.4);
+}
+
+.add-btn {
+  width: 100%;
+  border: none;
+  background-color: #2e86de;
+  color: white;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 10px;
+  transition: 0.2s ease;
+}
+
+.add-btn:hover {
+  background-color: #1b65b8;
+}
+
+.invalid-feedback {
+  color: #d9534f;
+  font-size: 0.9rem;
+}
+
+
+
+/* show.ejs */

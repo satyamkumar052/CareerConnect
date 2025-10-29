@@ -1,0 +1,38 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="login-container">
+  <h1>Login to JobPortal</h1>
+  <form method="POST" action="/login" novalidate class="needs-validation">
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input
+        id="username"
+        type="text"
+        name="username"
+        placeholder="Enter username"
+        class="form-control"
+        required
+      />
+      <div class="invalid-feedback">Please enter a username.</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input
+        id="password"
+        type="password"
+        name="password"
+        placeholder="Enter password"
+        class="form-control"
+        required
+      />
+      <div class="invalid-feedback">Please enter a password.</div>
+    </div>
+
+    <button class="btn add-btn">Login</button>
+  </form>
+
+  <div class="text-center mt-3">
+    <small>Don't have an account? <a href="/signup">Sign up here</a></small>
+  </div>
+</div>

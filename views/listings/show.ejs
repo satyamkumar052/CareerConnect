@@ -1,0 +1,66 @@
+<% layout("/layouts/boilerplate") %>
+<style>
+    
+body {
+      background-color: #f5f7fa;
+      font-family: 'Poppins', sans-serif;
+    }
+.job-detail {
+  max-width: 700px;
+  margin: 60px auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+.job-detail h2 {
+  color: #2e86de;
+  margin-bottom: 10px;
+}
+.job-detail h5 {
+  color: #444;
+  margin-bottom: 20px;
+}
+.job-detail p {
+  color: #555;
+  line-height: 1.6;
+}
+.btn-back {
+  background-color: #2e86de;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.btn-back:hover {
+  background-color: #1b65b8;
+}
+.btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: -2rem;
+}
+</style>
+  <div class="job-detail">
+    <h2><%= job.title %></h2>
+    <h5><%= job.company %> — &nbsp;<i class="fa-solid fa-location-dot"></i><%= job.location %></h5>
+    <p><strong>Salary:</strong> ₹<%= job.salary.toLocaleString("en-IN") %></p>
+    <hr>
+    <p><strong>Description:</strong></p>
+    <p><%= job.description %></p>
+    
+    <p><strong>Posted by:</strong> <%= job.createdBy.username %></p>
+
+    <a href="/jobs" class="btn-back mt-3 d-inline-block">← Back</a>
+    <div class="btns">
+    <a href="/jobs/<%= job._id %>/edit" class="btn btn-primary">✏️ Edit</a>
+
+      <form action="/jobs/<%= job._id %>?_method=DELETE" method="post" style="display:inline;">
+        <button class="btn btn-danger" type="submit">🗑️ Delete</button>
+    </form>
+    </div>
+  </div>
+

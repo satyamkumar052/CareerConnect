@@ -1,0 +1,39 @@
+<% layout("/layouts/boilerplate") %>
+
+
+<h3 class="offset-2">Edit Job</h3>
+<div class="col-7 offset-2">
+<br>
+    <form method="post" action="/jobs/<%= job._id%>?_method=PATCH" novalidate class="needs-validation">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input id="title" type="text" name="listing[title]" value="<%= job.title%>" placeholder="Enter title" class="form-control" required>
+            <div class="valid-feedback">Title Looks good!</div>
+            <div class="invalid-feedback">Please Enter a Title.</div>
+        </div>
+        <div class="mb-3">
+            <label for="company" class="form-label">Company</label>
+            <input id="company" type="text" name="listing[company]" value="<%= job.company%>" placeholder="Enter Company" class="form-control" required>
+            <div class="invalid-feedback">Please Enter Company name</div>
+        </div>
+        <div class="row">
+        <div class="mb-3 col-md-6">
+            <label for="location" class="form-label">Location</label>
+            <input id="location" type="text" name="listing[location]" value="<%= job.location%>" placeholder="Enter location" class="form-control" required>
+            <div class="invalid-feedback">Please enter location.</div>
+        </div>
+        <div class="mb-3 col-md-6">
+            <label for="salary" class="form-label">Salary</label>
+            <input id="salary" type="number" name="listing[salary]" value="<%= job.salary%>" placeholder="Enter Salary" class="form-control" required>
+            <div class="invalid-feedback">Please enter salary.</div>
+        </div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">description</label>
+            <input id="description" type="text" name="listing[description]" value="<%= job.description%>" placeholder="Enter description" class="form-control" required>
+            <div class="invalid-feedback">Please enter description.</div>
+        </div>
+        <button class="btn btn-success">Edit</button>
+    </form>
+
+</div>
