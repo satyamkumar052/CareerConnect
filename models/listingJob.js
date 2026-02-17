@@ -5,15 +5,15 @@ const Schema = mongoose.Schema;
 const listingJob = new Schema({
     title : {
         type : String,
-        required : true,
+        required: true,
     },
     company : {
         type : String,
-        required :true,
+        required: true,
     },
     location : {
         type : String,
-        required :true,
+        required: true,
     },
     salary: {
         type: Number,
@@ -30,5 +30,5 @@ const listingJob = new Schema({
     },
 });
 
-const Job = mongoose.model("Job",listingJob);
+const Job = mongoose.model("Job", listingJob);
 module.exports = Job;
