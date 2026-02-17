@@ -34,4 +34,4 @@ const sampledata = [
 ];
 
 
-module.exports = sampledata;
+export default sampledata;
