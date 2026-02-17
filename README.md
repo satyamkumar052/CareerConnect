@@ -1,7 +1,6 @@
-# Job Listing Portal (Backend Developer Assignment)
+# Job Listing Portal
 
 ## Features
-- User authentication (signup/login using Passport.js)
 - Job listing CRUD operations
 - MongoDB with Mongoose
 - Flash messages and validation
