@@ -1,6 +1,6 @@
 import { connect } from "mongoose";
 import initData from "./data.js";
-import { deleteMany, insertMany } from "../models/listingJob.js";
+import Job from "../models/listingJob.js";
 
 // connection with db
 main().then(()=>console.log("Connected to db")).catch((err)=>console.log(err));
@@ -10,8 +10,8 @@ async function main() {
 
 // insert to db 
 const initDB = async () =>{
-    await deleteMany({});
-    await insertMany(initData);
+    await Job.deleteMany({});
+    await Job.insertMany(initData);
     console.log("Data is Added");
 };
 initDB();
