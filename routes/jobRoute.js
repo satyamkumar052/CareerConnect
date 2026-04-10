@@ -5,13 +5,13 @@ const ExpressError = require("../utils/ExpressError.js");
 const {isLoggedIn, isOwner, validateJob} = require("../middleware.js");
 const Job = require("../models/listingJob.js");
 
-// show job
+// show jobs
 router.get("/", async (req,res)=>{
     const alljobs = await Job.find({});
     res.render("listings/index.ejs",{alljobs});
 });
 
-// create job
+// create a job
 router.post("/",isLoggedIn,validateJob,wrapAsync(async (req,res)=>{
     let job = new Job(req.body.listing);
     job.createdBy = req.user._id;
@@ -27,7 +27,7 @@ router.get("/new",isLoggedIn, (req,res)=>{
 });
 
 
-// destroy listing
+// destroy listing( delete )
 router.delete("/:id",isLoggedIn,isOwner,wrapAsync( async (req,res)=>{
     let {id} = req.params;
     await Job.findByIdAndDelete(id);
