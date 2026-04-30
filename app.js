@@ -40,8 +40,8 @@ const store = MongoStore.create({
     touchAfter : 24 * 60 * 60,
 });
 
-store.on("error", ()=>{
-    console.log("Error in mongo session store",err);
+store.on("error", (err)=>{
+    console.log("Error in mongo session store", err);
 });
 
 const sessionOption = {
