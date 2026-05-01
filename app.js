@@ -16,6 +16,10 @@ const ExpressError = require("./utils/ExpressError");
 const wrapAsync = require("./utils/wrapAsync");
 const jobRouter = require("./routes/jobRoute");
 
+const MONGO_URL = process.env.MONGO_URL || "mongodb://127.0.0.1:27017/listingjob";
+const SESSION_SECRET = process.env.SESSION_SECRET || "mysecretsession";
+const PORT = process.env.PORT || 8080;
+
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
@@ -26,7 +30,6 @@ app.use(express.static(path.join(__dirname,"public")));
 app.use(methodOverride('_method'))
 
 // connection with db
-const MONGO_URL = "mongodb://127.0.0.1:27017/listingjob";
 main().then(()=>console.log("Connected to db")).catch(err=>console.log(err));
 async function main() {
     await mongoose.connect(MONGO_URL);
@@ -35,7 +38,7 @@ async function main() {
 const store = MongoStore.create({
     mongoUrl : MONGO_URL,
     crypto : {
-        secret : "mysecretsession",
+        secret : SESSION_SECRET,
     },
     touchAfter : 24 * 60 * 60,
 });
@@ -45,7 +48,7 @@ store.on("error", (err)=>{
 });
 
 const sessionOption = {
-    secret : "mysecretsession",
+    secret : SESSION_SECRET,
     resave : false,
     saveUninitialized : true,
     cookie :{
@@ -87,6 +90,6 @@ app.get("/",(req,res)=>{
     res.send("Request Received");
 });
 
-app.listen(8080,()=>{
-    console.log("Server is listening to port 8080");
+app.listen(PORT,()=>{
+    console.log(`Server is listening to port ${PORT}`);
 });
