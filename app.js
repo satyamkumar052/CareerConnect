@@ -81,6 +81,10 @@ app.use((req,res,next)=>{  // flash message
 app.use("/jobs", jobRouter);
 app.use("/",userRouter);
 
+app.use((req, res) => {
+    res.status(404).send("Page not found");
+});
+
 app.use((err, req, res, next)=>{
     let {statusCode=400,message="something wrong"} = err;
     res.status(statusCode).send(message);
