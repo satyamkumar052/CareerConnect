@@ -50,7 +50,8 @@ store.on("error", (err)=>{
 const sessionOption = {
     secret : SESSION_SECRET,
     resave : false,
-    saveUninitialized : true,
+    saveUninitialized : false,
+    store,
     cookie :{
         expires : Date.now() + 7 * 24 * 60 * 60 * 1000,
         maxAge : 7 * 24 * 60 * 60 * 1000,
